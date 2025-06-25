@@ -1,0 +1,8 @@
+.card {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.card-text {
+    color: var(--bs-primary);
+    font-weight: bold;
+}

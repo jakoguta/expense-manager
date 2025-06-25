@@ -1,0 +1,7 @@
+<div class="bg-light rounded d-flex p-4">
+  <i [class]="iconClass()" class="h2 text-primary"></i>
+  <div class="ms-3">
+      <p class="mb-2">{{ title() }}</p>
+      <h6 class="mb-0">{{ value() | currency:'KES. ': 'symbol':'1.2-2' }}</h6>
+  </div>
+</div>
