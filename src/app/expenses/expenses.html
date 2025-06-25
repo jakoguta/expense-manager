@@ -1,5 +1,9 @@
 <div class="pt-4 px-4">
     <h1>Expenses</h1>
+    <p>Below is a list of all your expenses for the last 30 days</p>
 </div>
-
-<app-expense-table></app-expense-table>
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <app-expense-table [expenses]="expenses()"></app-expense-table>
+    </div>    
+</div>

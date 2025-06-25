@@ -1,16 +1,21 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
-import { ExpenseTable } from '../shared/components/expense-table/expense-table'
-import { ExpenseCard } from '../shared/components/expense-card/expense-card'
+import { ExpenseTable } from '../shared/components/expense-table/expense-table';
+import { ExpenseCard } from '../shared/components/expense-card/expense-card';
+import { Expense } from '../shared/models/expense.model';
+import { ExpenseService } from '../shared/services/expense.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [BaseChartDirective, ExpenseTable, ExpenseCard],
+  imports: [BaseChartDirective, ExpenseTable, ExpenseCard, RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
-export class Dashboard {
+export class Dashboard implements OnInit {
+
+  constructor(private expenseService: ExpenseService) {}
 
   incomeTitle = signal('Monthly Income');
   incomeAmount = signal(250000);
@@ -23,6 +28,8 @@ export class Dashboard {
   expensesTitle = signal('Current Expenses');
   expensesAmount = signal(120000);
   expensesIcon = signal('bi bi-piggy-bank-fill');
+
+  expenses = signal<Expense[]>([]);   
 
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
     responsive: true,
@@ -51,5 +58,11 @@ export class Dashboard {
       },
     ],
   };
+
+  ngOnInit(): void {
+    this.expenseService.getExpenses().subscribe((data) => {
+      this.expenses.set(data.slice(0, 5));
+    });
+  }
 
 }
