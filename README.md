@@ -5,9 +5,11 @@ This project is a demonstration of how to use Angular. It currently using Angula
 ## Preview of the project
 
 This is the home page of the expense manager.
+
 ![home](./public/images/expense-home.png)
 
 This is the expense list page.
+
 ![list](./public/images/expense-list.png)
 
 ## Docker compose installation
