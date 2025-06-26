@@ -2,6 +2,22 @@
 
 This project is a demonstration of how to use Angular. It currently using Angular v20.
 
+## Preview of the project
+
+This is the home page of the expense manager.
+![home](./public/images/expense-home.png)
+
+This is the expense list page.
+![list](./public/images/expense-list.png)
+
+## Docker compose installation
+
+```
+git clone https://github.com/jakoguta/expense-manager.git
+cd expense-manager
+docker compose up
+```
+
 ## Development server
 
 To start a local development server, run:
