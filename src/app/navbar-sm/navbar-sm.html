@@ -1,0 +1,23 @@
+<nav class="navbar d-block d-lg-none navbar-dark bg-nav-sm">
+    <div class="container-fluid">
+      <h3 class="text-primary" routerLink="/dashboard"><i class="bi bi-wallet-fill me-2"></i>MFUKO</h3>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        (click)="toggleCollapse()"
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [class.show]="!isCollapsed">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/expenses" routerLinkActive="active">Expenses</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
