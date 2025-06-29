@@ -3,7 +3,8 @@
     <p>Below is a list of all your expenses for the last 30 days</p>
 </div>
 <div class="container-fluid pt-4 px-4">
-    <div class="bg-light text-center rounded p-4">
+    <div class="bg-light rounded p-4">
         <app-expense-table [expenses]="expenses()"></app-expense-table>
+        <app-expense-table-sm [expenses]="expenses()"></app-expense-table-sm>
     </div>    
 </div>

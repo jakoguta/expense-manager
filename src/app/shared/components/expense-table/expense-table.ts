@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { Expense } from '../../models/expense.model'
+import { Expense } from '../../models/expense.model';
 
 @Component({
   selector: 'app-expense-table',

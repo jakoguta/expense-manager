@@ -1,0 +1,25 @@
+@for (item of expenses(); track item.id) {
+    <div class="card mb-3 d-block d-md-none">
+        <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <small class="text-muted">{{ item.date }}</small>
+            <span 
+            class="badge"
+            [ngClass]="{
+                'bg-success': item.status === 'Paid',
+                'bg-warning text-dark': item.status === 'Pending',
+                'bg-danger': item.status === 'Overdue'
+            }">
+            {{ item.status }}
+            </span>
+        </div>
+    
+        <p class="card-text mt-2 mb-1">{{ item.description }}</p>
+    
+        <p class="card-text fw-bold text-end mb-0">
+            {{ item.amount | currency:'KES. ': 'symbol':'1.2-2' }}
+        </p>
+        </div>
+    </div>
+}
+  

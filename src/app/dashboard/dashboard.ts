@@ -2,6 +2,7 @@ import { Component, signal, OnInit } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { ExpenseTable } from '../shared/components/expense-table/expense-table';
+import { ExpenseTableSm } from '../shared/components/expense-table-sm/expense-table-sm';
 import { ExpenseCard } from '../shared/components/expense-card/expense-card';
 import { Expense } from '../shared/models/expense.model';
 import { ExpenseService } from '../shared/services/expense.service';
@@ -9,7 +10,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [BaseChartDirective, ExpenseTable, ExpenseCard, RouterLink],
+  imports: [BaseChartDirective, ExpenseTable, ExpenseCard, RouterLink, ExpenseTableSm],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
